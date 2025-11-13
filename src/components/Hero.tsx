@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black text-white">
       {/* Background com overlay mais sutil para destacar a imagem */}
-      <div className="absolute inset-0 bg-[url('/rebanho-de-cavalos-correndo-pela-agua.jpg')] bg-cover bg-center brightness-110 saturate-110"></div>
+      <div className="absolute inset-0 bg-cover bg-center brightness-110 saturate-110" style={{ backgroundImage: "url('/Fundo Cavalo preto.jpg')", transform: 'scaleX(-1)' }}></div>
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-black/50"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.15),transparent_60%)]"></div>
       
@@ -33,7 +33,6 @@ export default function Hero() {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
-              <span className="block">Excelência em</span>
               <span 
                 className="block bg-clip-text text-transparent animate-gradient"
                 style={{
@@ -43,7 +42,7 @@ export default function Hero() {
                   backgroundSize: '200% auto'
                 }}
               >
-                Leilões de Cavalos
+                Estamos prontos para elevar o nível da sua criação
               </span>
             </h1>
             
@@ -58,7 +57,7 @@ export default function Hero() {
                 href="#leiloes"
                 className="group bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all duration-300 flex items-center gap-2 shadow-lg shadow-white/20 hover:shadow-xl hover:shadow-white/30 hover:scale-105"
               >
-                Ver Leilões em Destaque
+                Agenda de Leilões
                 <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a

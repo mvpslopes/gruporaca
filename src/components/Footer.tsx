@@ -37,7 +37,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Excelência e transparência em leilões de cavalos de elite.
+              Excelência em leilões de cavalos de elite.
             </p>
             <a
               href="https://www.gruporaca.com.br"

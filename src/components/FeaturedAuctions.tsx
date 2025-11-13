@@ -7,7 +7,7 @@ const auctions = [
     date: '15 de Dezembro, 2024',
     location: 'Belo Horizonte, MG',
     participants: '120+ animais',
-    image: '/close-up-no-cavalo-ao-ar-livre.jpg',
+    image: '/Leilão 01.jpg',
     status: 'Em breve'
   },
   {
@@ -16,7 +16,7 @@ const auctions = [
     date: '20 de Novembro, 2024',
     location: 'São Paulo, SP',
     participants: '85+ animais',
-    image: '/lindo-cavalo-castanho-close-up-focinho-aparencia-bonita-juba-plano-de-fundo-campo-de-atletismo-curral-arvores-cavalos-sao-animais-maravilhosos.jpg',
+    image: '/Leilão 02.jpg',
     status: 'Inscrições abertas'
   },
   {
@@ -25,7 +25,7 @@ const auctions = [
     date: '5 de Janeiro, 2025',
     location: 'Rio de Janeiro, RJ',
     participants: '95+ animais',
-    image: '/lindo-cavalo-marrom-ao-ar-livre.jpg',
+    image: '/Leilão 03.jpg',
     status: 'Em breve'
   }
 ];
@@ -37,7 +37,7 @@ export default function FeaturedAuctions() {
         <div className="text-center mb-20">
           <div className="inline-block mb-4">
             <span className="px-4 py-2 bg-black/5 rounded-full text-sm font-semibold text-gray-700">
-              Próximos Eventos
+              Confira nossa agenda
             </span>
           </div>
           <h2 className="text-5xl md:text-6xl font-extrabold text-black mb-6">
@@ -51,7 +51,7 @@ export default function FeaturedAuctions() {
             >Destaque</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Participe dos maiores eventos de leilões de cavalos de elite do país
+            Acompanhe aqui os principais leilões de cavalos de elite do Brasil.
           </p>
         </div>
 
@@ -62,12 +62,12 @@ export default function FeaturedAuctions() {
               className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-gray-200"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="relative h-72 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
+              <div className="relative h-72 overflow-hidden bg-gray-100">
                 <img
                   src={auction.image}
                   alt={auction.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
+                  style={{ objectFit: 'contain' }}
                 />
                 <div className="absolute top-6 right-6 z-20">
                   <span className={`px-4 py-2 rounded-full text-xs font-bold backdrop-blur-md ${
@@ -78,12 +78,10 @@ export default function FeaturedAuctions() {
                     {auction.status}
                   </span>
                 </div>
-                <div className="absolute bottom-6 left-6 right-6 z-20">
-                  <h3 className="text-2xl font-bold text-white mb-2 drop-shadow-lg">{auction.title}</h3>
-                </div>
               </div>
 
               <div className="p-6 space-y-4">
+                <h3 className="text-2xl font-bold text-black mb-2">{auction.title}</h3>
                 <div className="space-y-3">
                   <div className="flex items-center text-gray-700 group-hover:text-black transition-colors">
                     <div className="w-10 h-10 rounded-lg bg-gray-100 group-hover:bg-black group-hover:text-white flex items-center justify-center mr-3 transition-all duration-300">
@@ -119,7 +117,7 @@ export default function FeaturedAuctions() {
             href="#site"
             className="inline-flex items-center gap-3 text-black font-bold hover:text-gray-600 transition-all duration-300 group text-lg"
           >
-            Ver todos os leilões no site oficial
+            Acesse nosso site oficial e confira nossa agenda completa
             <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
           </a>
         </div>

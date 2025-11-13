@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { LogIn } from 'lucide-react';
+import { LogIn, Database } from 'lucide-react';
 import Hero from './components/Hero';
 import FeaturedAuctions from './components/FeaturedAuctions';
 import Assessors from './components/Assessors';
@@ -7,6 +7,7 @@ import SocialLinks from './components/SocialLinks';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
+import DatabasePage from './components/Database';
 import Loading from './components/Loading';
 import CTA from './components/CTA';
 import WhatsAppButton from './components/WhatsAppButton';
@@ -16,6 +17,7 @@ function App() {
   const [showLogin, setShowLogin] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
+  const [showDatabase, setShowDatabase] = useState(false);
 
   useEffect(() => {
     // Verificar se há usuário salvo no localStorage
@@ -42,6 +44,11 @@ function App() {
     localStorage.removeItem('gruporaca_user');
     setIsLoggingOut(false);
   };
+
+  // Se mostrar banco de dados, exibir página separada
+  if (showDatabase) {
+    return <DatabasePage />;
+  }
 
   // Se o usuário estiver logado, mostrar o dashboard
   if (user) {
@@ -72,9 +79,23 @@ function App() {
               <a href="#assessores" className="text-gray-300 hover:text-white transition-colors duration-200">
                 Assessores
               </a>
-              <a href="#site" className="text-gray-300 hover:text-white transition-colors duration-200">
-                Site Oficial
-              </a>
+              <button 
+                onClick={() => setShowDatabase(true)}
+                className="text-white px-6 py-2.5 rounded-lg transition-all duration-200 flex items-center gap-2 border border-gray-400/50 hover:scale-105"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(192, 192, 192, 0.2), rgba(160, 160, 160, 0.3), rgba(192, 192, 192, 0.2))',
+                  boxShadow: 'inset 0 1px 2px rgba(255, 255, 255, 0.1), 0 2px 4px rgba(0, 0, 0, 0.2)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(192, 192, 192, 0.3), rgba(200, 200, 200, 0.4), rgba(192, 192, 192, 0.3))';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(192, 192, 192, 0.2), rgba(160, 160, 160, 0.3), rgba(192, 192, 192, 0.2))';
+                }}
+              >
+                <Database size={18} />
+                Banco de Dados
+              </button>
               <button 
                 onClick={() => setShowLogin(true)}
                 className="text-white px-6 py-2.5 rounded-lg transition-all duration-200 flex items-center gap-2 border border-gray-400/50 hover:scale-105"

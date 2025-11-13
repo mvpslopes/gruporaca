@@ -4,25 +4,25 @@ const socialLinks = [
   {
     name: 'Instagram Principal',
     icon: Instagram,
-    url: 'https://instagram.com/gruporaca',
+    url: 'https://www.instagram.com/p/DQ6-QPRjulQ/',
     followers: '50k+'
   },
   {
     name: 'Instagram Vendas',
     icon: Instagram,
-    url: 'https://instagram.com/gruporacavendas',
+    url: 'https://www.instagram.com/gruporacavendas/',
     followers: '25k+'
   },
   {
     name: 'Facebook',
     icon: Facebook,
-    url: 'https://facebook.com/gruporaca',
+    url: 'https://www.facebook.com/profile.php?id=61560229880784',
     followers: '40k+'
   },
   {
     name: 'YouTube',
     icon: Youtube,
-    url: 'https://youtube.com/@gruporaca',
+    url: 'https://www.youtube.com/@gruporacaleiloes',
     followers: '15k+'
   }
 ];
@@ -42,17 +42,17 @@ export default function SocialLinks() {
             </span>
           </div>
           <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-6">
-            Nossas <span 
+            <span 
               className="bg-clip-text text-transparent"
               style={{
                 backgroundImage: 'linear-gradient(to right, #ffffff, #c0c0c0, #ffffff)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
               }}
-            >Redes Sociais</span>
+            >Conheça Nossas Redes</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Acompanhe as novidades e fique por dentro de tudo que acontece no mundo dos leilões
+            As novidades e acontecimentos mais marcantes do mercado equestre, estão aqui!
           </p>
         </div>
 
