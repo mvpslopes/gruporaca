@@ -1,10 +1,19 @@
 import { Phone, Mail, MapPin, ExternalLink } from 'lucide-react';
 
-const contacts = [
+const contacts: Array<{
+  department: string;
+  name: string;
+  phone: string;
+  whatsapp?: string;
+  whatsappMessage?: string;
+  email?: string;
+}> = [
   {
     department: 'Marketing',
     name: 'Toda Arte',
-    phone: '(31) 98237-1886'
+    phone: '(31) 98237-1886',
+    whatsapp: '5531982371886',
+    whatsappMessage: 'Olá, gostaria de falar sobre o Marketing Grupo Raça.'
   }
 ];
 
@@ -52,11 +61,11 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-6">Contato Rápido</h4>
             <div className="space-y-4">
               <a
-                href="tel:2138128494"
+                href="tel:2133289772"
                 className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors duration-200"
               >
                 <Phone size={20} className="flex-shrink-0" />
-                <span className="text-lg font-semibold">(21) 3812-8494</span>
+                <span className="text-lg font-semibold">(21) 3328-9772</span>
               </a>
             </div>
           </div>
@@ -90,6 +99,17 @@ export default function Footer() {
                     <Phone size={16} />
                     {contact.phone}
                   </a>
+                  {contact.whatsapp && (
+                    <a
+                      href={`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(contact.whatsappMessage || 'Olá!')}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                    >
+                      <Phone size={16} />
+                      WhatsApp
+                    </a>
+                  )}
                   {contact.email && (
                     <a
                       href={`mailto:${contact.email}`}
@@ -107,7 +127,7 @@ export default function Footer() {
                   <div key={index} className="space-y-2">
                     <p className="text-white text-sm font-medium">{contact.name}</p>
                     <a
-                      href={`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(`Olá, ${contact.name}! Gostaria de mais informações sobre o departamento jurídico.`)}`}
+                      href={`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent('Olá, gostaria de falar sobre assuntos jurídicos relacionados ao Grupo Raça.')}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-200 text-sm"

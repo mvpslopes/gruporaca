@@ -1,8 +1,8 @@
 import { MessageCircle } from 'lucide-react';
 
 export default function WhatsAppButton() {
-  const whatsappNumber = '5531999999999'; // Substitua pelo número real
-  const message = encodeURIComponent('Olá! Gostaria de saber mais sobre os leilões do Grupo Raça.');
+  const whatsappNumber = '5521981972847'; // Ariane Andrade
+  const message = encodeURIComponent('Olá, gostaria de saber mais sobre o Grupo Raça.');
 
   return (
     <a

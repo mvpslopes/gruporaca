@@ -52,7 +52,7 @@ export default function SocialLinks() {
             >Conheça Nossas Redes</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            As novidades e acontecimentos mais marcantes do mercado equestre, estão aqui!
+            As maiores novidades do mercado equestre, estão aqui!
           </p>
         </div>
 
@@ -87,10 +87,9 @@ export default function SocialLinks() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-white/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur-sm"></div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-gray-100 transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-gray-100 transition-colors">
                     {social.name}
                   </h3>
-                  <p className="text-gray-400 mb-4 font-medium">{social.followers} seguidores</p>
                 </div>
                 <div className="flex items-center gap-2 text-gray-300 group-hover:text-white transition-all duration-200 font-semibold">
                   <span className="text-sm">Visitar</span>

@@ -1,4 +1,4 @@
-import { CheckCircle, FileText, Calendar, ClipboardList, Users, Target, Zap, Award, Phone, MessageCircle, Database, FileCheck } from 'lucide-react';
+import { FileText, Calendar, ClipboardList, Users, Target, Zap, Award, Phone, MessageCircle, Database, FileCheck } from 'lucide-react';
 
 export default function AssessoriaCriadores() {
   const services = [
@@ -84,6 +84,49 @@ export default function AssessoriaCriadores() {
           </p>
         </div>
 
+        {/* Seção Ariane Andrade */}
+        <div className="mb-20">
+          <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 md:p-12 border-2 border-gray-200 shadow-2xl hover:shadow-3xl transition-all duration-300">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+              {/* Foto da Ariane */}
+              <div className="flex-shrink-0">
+                <div className="relative group">
+                  <div className="absolute -inset-2 bg-gradient-to-r from-gray-200 to-gray-300 rounded-2xl blur opacity-25 group-hover:opacity-50 transition-opacity"></div>
+                  <img
+                    src="/foto-ariane-fundo.JPG"
+                    alt="Ariane Andrade"
+                    className="relative w-56 h-56 md:w-80 md:h-80 rounded-2xl object-cover shadow-xl border-4 border-white transform group-hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      // Fallback para minúsculo se maiúsculo não funcionar
+                      const target = e.target as HTMLImageElement;
+                      if (target.src.includes('JPG')) {
+                        target.src = target.src.replace('JPG', 'jpg');
+                      }
+                    }}
+                  />
+                </div>
+              </div>
+              
+              {/* Logo e Informações */}
+              <div className="flex-1 flex flex-col md:flex-row items-center justify-between gap-6">
+                <p className="text-lg md:text-xl text-gray-700 font-medium flex-1 leading-relaxed text-center">
+                  Profissional especializada em assessoria aos criadores, oferecendo soluções personalizadas para o sucesso do seu criatório.
+                </p>
+                <div className="flex-shrink-0">
+                  <div className="relative group">
+                    <div className="absolute -inset-2 bg-gradient-to-r from-gray-200 to-gray-300 rounded-2xl blur opacity-25 group-hover:opacity-50 transition-opacity"></div>
+                    <img
+                      src="/logo-ariane-andrade-fundo.png"
+                      alt="Logo Assessoria Ariane Andrade"
+                      className="relative w-56 h-56 md:w-80 md:h-80 rounded-2xl object-contain shadow-xl border-4 border-white transform group-hover:scale-105 transition-transform duration-300 bg-white"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Nossos Serviços */}
         <div className="mb-20">
           <h3 className="text-4xl font-extrabold text-black mb-12 text-center">NOSSOS SERVIÇOS</h3>
@@ -142,23 +185,54 @@ export default function AssessoriaCriadores() {
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Entre em contato e descubra como a Assessoria Ariane Andrade, pode ajudar você a alcançar seus objetivos.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="tel:2138128494"
-              className="group bg-black text-white px-8 py-4 rounded-xl font-bold hover:bg-gray-800 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
-            >
-              <Phone size={20} />
-              Ligar Agora
-            </a>
-            <a
-              href="https://wa.me/552138128494?text=Olá! Gostaria de mais informações sobre a Assessoria aos Criadores."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-green-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-green-700 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
-            >
-              <MessageCircle size={20} />
-              WhatsApp
-            </a>
+          
+          {/* Contatos */}
+          <div className="space-y-6 mb-8">
+            {/* Ligação */}
+            <div>
+              <p className="text-lg font-semibold text-black mb-2">Ligação:</p>
+              <a
+                href="tel:2133289772"
+                className="group bg-black text-white px-8 py-4 rounded-xl font-bold hover:bg-gray-800 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 inline-flex"
+              >
+                <Phone size={20} />
+                (21) 3328-9772
+              </a>
+            </div>
+
+            {/* WhatsApp */}
+            <div>
+              <p className="text-lg font-semibold text-black mb-4">WhatsApp:</p>
+              <div className="flex flex-wrap justify-center gap-4">
+                {/* Ariane Andrade */}
+                <a
+                  href="https://wa.me/5521981972847?text=Olá, gostaria de saber mais sobre os serviços de Assessoria ao Criador."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-green-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-green-700 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
+                >
+                  <MessageCircle size={20} />
+                  <div className="text-left">
+                    <div className="text-sm font-normal">Ariane Andrade:</div>
+                    <div className="text-base">(21) 98197-2847</div>
+                  </div>
+                </a>
+                
+                {/* Carol Marinho */}
+                <a
+                  href="https://wa.me/5531990790604?text=Olá, gostaria de saber mais sobre os serviços de Assessoria ao Criador."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-green-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-green-700 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
+                >
+                  <MessageCircle size={20} />
+                  <div className="text-left">
+                    <div className="text-sm font-normal">Carol Marinho:</div>
+                    <div className="text-base">(31) 99079-0604</div>
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

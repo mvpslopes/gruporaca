@@ -160,7 +160,7 @@ export default function Website({ onBack }: WebsiteProps) {
                   Bem-vindo ao <span className="text-gray-700">Grupo Raça</span>
                 </h1>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Excelência em leilões de cavalos de elite. Conectando criadores e apaixonados pela raça desde 2009.
+                  Especialistas em leilões de elite, unindo tradição, inovação e excelência para impulsionar o mercado de criação. Conectando criadores e apaixonados pela raça desde 2009.
                 </p>
               </div>
 
@@ -207,7 +207,7 @@ export default function Website({ onBack }: WebsiteProps) {
                   </div>
                   <h3 className="text-2xl font-bold text-black mb-4">Nossos Serviços</h3>
                   <p className="text-gray-600">
-                    Leilões, assessoria técnica, consultoria e muito mais para o mercado equestre.
+                    Leilões, assessoria comercial, consultoria e muito mais para o mercado equestre.
                   </p>
                 </div>
 
@@ -319,7 +319,7 @@ export default function Website({ onBack }: WebsiteProps) {
                 </div>
 
                 <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
-                  <h3 className="text-2xl font-bold text-black mb-4">Assessoria Técnica</h3>
+                  <h3 className="text-2xl font-bold text-black mb-4">Assessoria Comercial</h3>
                   <p className="text-gray-600 mb-4">
                     Nossa equipe de especialistas oferece consultoria completa para criadores e compradores.
                   </p>
@@ -551,7 +551,7 @@ export default function Website({ onBack }: WebsiteProps) {
                         <span>{assessor.email}</span>
                       </a>
                       <a
-                        href={`https://wa.me/${assessor.whatsapp}?text=${encodeURIComponent(`Olá, ${assessor.name}! Gostaria de mais informações sobre assessoria técnica.`)}`}
+                        href={`https://wa.me/${assessor.whatsapp}?text=${encodeURIComponent(`Olá, ${assessor.name}! Gostaria de mais informações sobre assessoria comercial.`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 bg-black text-white px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors"

@@ -3,6 +3,7 @@ import { LogIn, Database } from 'lucide-react';
 import Hero from './components/Hero';
 import FeaturedAuctions from './components/FeaturedAuctions';
 import Assessors from './components/Assessors';
+import AssessoriaCriadores from './components/AssessoriaCriadores';
 import SocialLinks from './components/SocialLinks';
 import Footer from './components/Footer';
 import Login from './components/Login';
@@ -79,6 +80,9 @@ function App() {
               <a href="#assessores" className="text-gray-300 hover:text-white transition-colors duration-200">
                 Assessores
               </a>
+              <a href="#assessoria-criadores" className="text-gray-300 hover:text-white transition-colors duration-200">
+                Assessoria aos Criadores
+              </a>
               <button 
                 onClick={() => setShowDatabase(true)}
                 className="text-white px-6 py-2.5 rounded-lg transition-all duration-200 flex items-center gap-2 border border-gray-400/50 hover:scale-105"
@@ -121,6 +125,7 @@ function App() {
       <Hero />
       <FeaturedAuctions />
       <CTA />
+      <AssessoriaCriadores />
       <Assessors />
       <SocialLinks />
       <Footer />
