@@ -1,12 +1,6 @@
-import { ChevronRight, TrendingUp, Users, Award, Shield } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 export default function Hero() {
-  const stats = [
-    { icon: TrendingUp, value: '500+', label: 'Leilões Realizados' },
-    { icon: Users, value: '10k+', label: 'Clientes Atendidos' },
-    { icon: Award, value: '15+', label: 'Anos de Experiência' },
-    { icon: Shield, value: '100%', label: 'Transparência' }
-  ];
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black text-white">
@@ -23,7 +17,7 @@ export default function Hero() {
       <div className="absolute bottom-20 left-20 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse delay-1000 opacity-50"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="flex items-center">
           {/* Conteúdo principal */}
           <div className="space-y-8 animate-fade-in">
             <div className="inline-block">
@@ -32,25 +26,25 @@ export default function Hero() {
               </span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
-              <span 
-                className="block bg-clip-text text-transparent animate-gradient"
-                style={{
-                  backgroundImage: 'linear-gradient(to right, #c0c0c0, #e8e8e8, #ffffff, #e8e8e8, #c0c0c0)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundSize: '200% auto'
-                }}
-              >
-                Estamos prontos para elevar o nível da sua criação
-              </span>
+            <h1 className="text-5xl md:text-7xl font-extrabold leading-tight text-white">
+              <div>Estamos</div>
+              <div>prontos para</div>
+              <div>elevar o nível</div>
+              <div>da sua criação</div>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-2xl">
-              Conectando criadores e apaixonados pela raça com{' '}
-              <span className="text-white font-semibold">transparência</span> e{' '}
-              <span className="text-white font-semibold">profissionalismo</span> desde 2009.
-            </p>
+            <div className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-2xl">
+              <div>Conectando criadores e apaixonados</div>
+              <div>
+                pela raça com{' '}
+                <span className="text-white font-semibold">transparência</span>,{' '}
+                <span className="text-white font-semibold">profissionalismo</span>
+              </div>
+              <div>
+                e{' '}
+                <span className="text-white font-semibold">compromisso com a excelência</span>.
+              </div>
+            </div>
             
             <div className="flex flex-wrap gap-4">
               <a
@@ -61,39 +55,14 @@ export default function Hero() {
                 <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="#site"
+                href="https://gruporaca.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group bg-transparent border-2 border-white/30 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 hover:border-white/50 transition-all duration-300 backdrop-blur-sm hover:scale-105"
               >
                 Site Oficial
               </a>
             </div>
-          </div>
-
-          {/* Estatísticas */}
-          <div className="grid grid-cols-2 gap-6">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="flex flex-col items-center text-center space-y-3">
-                  <div 
-                    className="w-14 h-14 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform border border-gray-400/40"
-                    style={{
-                      background: 'linear-gradient(135deg, rgba(192, 192, 192, 0.4), rgba(255, 255, 255, 0.2), rgba(192, 192, 192, 0.4))',
-                      boxShadow: 'inset 0 1px 2px rgba(255, 255, 255, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2)'
-                    }}
-                  >
-                    <stat.icon size={28} className="text-white drop-shadow-lg" />
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
-                    <div className="text-sm text-gray-400 font-medium">{stat.label}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

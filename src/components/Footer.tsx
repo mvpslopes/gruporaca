@@ -2,24 +2,22 @@ import { Phone, Mail, MapPin, ExternalLink } from 'lucide-react';
 
 const contacts = [
   {
-    department: 'Administrativo',
-    phone: '(31) 3333-1111',
-    email: 'admin@gruporaca.com.br'
-  },
-  {
-    department: 'Financeiro',
-    phone: '(31) 3333-2222',
-    email: 'financeiro@gruporaca.com.br'
-  },
-  {
     department: 'Marketing',
-    phone: '(31) 3333-3333',
-    email: 'marketing@gruporaca.com.br'
+    name: 'Toda Arte',
+    phone: '(31) 98237-1886'
+  }
+];
+
+const juridicoContacts = [
+  {
+    name: 'Sheyla',
+    phone: '(31) 97196-3100',
+    whatsapp: '5531971963100'
   },
   {
-    department: 'Jurídico',
-    phone: '(31) 3333-4444',
-    email: 'juridico@gruporaca.com.br'
+    name: 'Isabela',
+    phone: '(31) 9907-3212',
+    whatsapp: '553199073212'
   }
 ];
 
@@ -27,7 +25,7 @@ export default function Footer() {
   return (
     <footer id="site" className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           <div>
             <div className="mb-6">
               <img 
@@ -37,10 +35,10 @@ export default function Footer() {
               />
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Excelência em leilões de cavalos de elite.
+              Especialistas em leilões de elite, unindo tradição, inovação e excelência para impulsionar o mercado de criação.
             </p>
             <a
-              href="https://ariane.agrobold.com.br/"
+              href="https://gruporaca.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-200 transition-all duration-200 font-semibold"
@@ -51,14 +49,26 @@ export default function Footer() {
           </div>
 
           <div>
+            <h4 className="text-lg font-bold mb-6">Contato Rápido</h4>
+            <div className="space-y-4">
+              <a
+                href="tel:2138128494"
+                className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors duration-200"
+              >
+                <Phone size={20} className="flex-shrink-0" />
+                <span className="text-lg font-semibold">(21) 3812-8494</span>
+              </a>
+            </div>
+          </div>
+
+          <div>
             <h4 className="text-lg font-bold mb-6">Sede</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3 text-gray-400">
                 <MapPin size={20} className="mt-1 flex-shrink-0" />
                 <span>
-                  Av. Principal, 1000<br />
-                  Belo Horizonte, MG<br />
-                  CEP: 30000-000
+                  R. Viçosa, 191 - São Pedro<br />
+                  Belo Horizonte - MG, 30330-160
                 </span>
               </div>
             </div>
@@ -70,6 +80,9 @@ export default function Footer() {
               {contacts.map((contact) => (
                 <div key={contact.department} className="space-y-2">
                   <h5 className="font-semibold text-white">{contact.department}</h5>
+                  {contact.name && (
+                    <p className="text-white text-sm font-medium">{contact.name}</p>
+                  )}
                   <a
                     href={`tel:${contact.phone.replace(/\D/g, '')}`}
                     className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-200 text-sm"
@@ -77,15 +90,34 @@ export default function Footer() {
                     <Phone size={16} />
                     {contact.phone}
                   </a>
-                  <a
-                    href={`mailto:${contact.email}`}
-                    className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-200 text-sm break-all"
-                  >
-                    <Mail size={16} />
-                    {contact.email}
-                  </a>
+                  {contact.email && (
+                    <a
+                      href={`mailto:${contact.email}`}
+                      className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-200 text-sm break-all"
+                    >
+                      <Mail size={16} />
+                      {contact.email}
+                    </a>
+                  )}
                 </div>
               ))}
+              <div className="space-y-3">
+                <h5 className="font-semibold text-white">Jurídico</h5>
+                {juridicoContacts.map((contact, index) => (
+                  <div key={index} className="space-y-2">
+                    <p className="text-white text-sm font-medium">{contact.name}</p>
+                    <a
+                      href={`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(`Olá, ${contact.name}! Gostaria de mais informações sobre o departamento jurídico.`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                    >
+                      <Phone size={16} />
+                      {contact.phone}
+                    </a>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -103,6 +135,21 @@ export default function Footer() {
                 Termos de Uso
               </a>
             </div>
+          </div>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-2 mt-6 pt-6 border-t border-gray-800">
+            <span className="text-gray-500 text-xs">Desenvolvido por</span>
+            <a
+              href="https://todaarte.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:opacity-100 transition-opacity"
+            >
+              <img 
+                src="/logo-todaarte.png" 
+                alt="Toda Arte" 
+                className="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
+              />
+            </a>
           </div>
         </div>
       </div>

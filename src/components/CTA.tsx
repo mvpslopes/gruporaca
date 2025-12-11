@@ -15,7 +15,7 @@ export default function CTA() {
             </h2>
             
             <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed whitespace-nowrap">
-              Conectamos você as melhores oportunidades do mercado equestre
+              Conectamos você as melhores oportunidades do mercado equestre.
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center pt-4">
@@ -23,7 +23,7 @@ export default function CTA() {
                 href="#leiloes"
                 className="group bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all duration-300 flex items-center gap-2 shadow-lg shadow-white/20 hover:shadow-xl hover:shadow-white/30 hover:scale-105"
               >
-                Leilões no Ar
+                Leilões NO AR
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a

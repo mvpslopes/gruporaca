@@ -1,34 +1,74 @@
-import { Calendar, MapPin, Users, ArrowRight } from 'lucide-react';
+import { Calendar, MapPin, ArrowRight } from 'lucide-react';
+
+// Função auxiliar para criar datas de dezembro do ano atual
+function createDecemberDate(day: number): Date {
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  // Se estamos em janeiro e os leilões são de dezembro, usar o ano anterior
+  // Caso contrário, usar o ano atual
+  const year = now.getMonth() === 0 && day > 1 ? currentYear - 1 : currentYear;
+  return new Date(year, 11, day); // Dezembro é mês 11 (0-indexed)
+}
 
 const auctions = [
   {
     id: 1,
-    title: 'Leilão Elite 2024',
-    date: '15 de Dezembro, 2024',
-    location: 'Belo Horizonte, MG',
-    participants: '120+ animais',
-    image: '/Leilão 01.jpg',
-    status: 'Em breve'
+    title: '3º Shopping Haras Baependi',
+    date: '08 a 13 de Dezembro',
+    startDate: createDecemberDate(8),
+    endDate: createDecemberDate(13),
+    breed: 'Mangalarga Marchador',
+    image: '/Leilao-08-13-12.jpg'
   },
   {
     id: 2,
-    title: 'Leilão Primavera',
-    date: '20 de Novembro, 2024',
-    location: 'São Paulo, SP',
-    participants: '85+ animais',
-    image: '/Leilão 02.jpg',
-    status: 'No ar'
+    title: 'Genética Campeã Haras Luxor',
+    date: '09 a 13 de Dezembro',
+    startDate: createDecemberDate(9),
+    endDate: createDecemberDate(13),
+    breed: 'Mangalarga Marchador',
+    image: '/Leilao-09a13-12.jpg'
   },
   {
     id: 3,
-    title: 'Leilão Especial',
-    date: '5 de Janeiro, 2025',
-    location: 'Rio de Janeiro, RJ',
-    participants: '95+ animais',
-    image: '/Leilão 03.jpg',
-    status: 'Encerrado'
+    title: 'I Leilão Encantos da Marcha',
+    date: '11 de Dezembro',
+    startDate: createDecemberDate(11),
+    endDate: createDecemberDate(11),
+    breed: 'Campolina Marchador',
+    image: '/Leilao-11-12-25.jpg' // Certifique-se de que a imagem está em GrupoRaca_/public/
+  },
+  {
+    id: 4,
+    title: 'Genética Campeã Haras Pardal',
+    date: '15 a 20 de Dezembro',
+    startDate: createDecemberDate(15),
+    endDate: createDecemberDate(20),
+    breed: 'Mangalarga Marchador',
+    image: '/Leilao-15-20-12.jpg'
   }
 ];
+
+function getAuctionStatus(startDate: Date, endDate: Date): string {
+  const now = new Date();
+  // Resetar horas para comparar apenas as datas (meia-noite)
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const start = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
+  const end = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate());
+  
+  // Comparar timestamps para evitar problemas de timezone
+  const todayTime = today.getTime();
+  const startTime = start.getTime();
+  const endTime = end.getTime();
+  
+  if (todayTime < startTime) {
+    return 'EM BREVE';
+  } else if (todayTime >= startTime && todayTime <= endTime) {
+    return 'NO AR';
+  } else {
+    return 'Encerrado';
+  }
+}
 
 export default function FeaturedAuctions() {
   return (
@@ -37,18 +77,18 @@ export default function FeaturedAuctions() {
         <div className="text-center mb-20">
           <div className="inline-block mb-4">
             <span className="px-4 py-2 bg-black/5 rounded-full text-sm font-semibold text-gray-700">
-              Confira nossa agenda
+              CONFIRA NOSSA AGENDA
             </span>
           </div>
           <h2 className="text-5xl md:text-6xl font-extrabold text-black mb-6">
-            Leilões em <span 
+            LEILÕES EM <span 
               className="bg-clip-text text-transparent"
               style={{
                 backgroundImage: 'linear-gradient(to right, #000000, #808080, #000000)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
               }}
-            >Destaque</span>
+            >DESTAQUE</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Acompanhe aqui os principais leilões de cavalos de elite do Brasil.
@@ -70,15 +110,20 @@ export default function FeaturedAuctions() {
                   style={{ objectFit: 'contain' }}
                 />
                 <div className="absolute top-6 right-6 z-20">
-                  <span className={`px-4 py-2 rounded-full text-xs font-bold backdrop-blur-md ${
-                    auction.status === 'No ar' 
-                      ? 'bg-green-500/90 text-white border border-green-400/50' 
-                      : auction.status === 'Encerrado'
-                      ? 'bg-gray-500/90 text-white border border-gray-400/50'
-                      : 'bg-black/70 text-white border border-white/20'
-                  }`}>
-                    {auction.status}
-                  </span>
+                  {(() => {
+                    const status = getAuctionStatus(auction.startDate, auction.endDate);
+                    return (
+                      <span className={`px-4 py-2 rounded-full text-xs font-bold backdrop-blur-md ${
+                        status === 'NO AR' 
+                          ? 'bg-green-500/90 text-white border border-green-400/50' 
+                          : status === 'Encerrado'
+                          ? 'bg-gray-500/90 text-white border border-gray-400/50'
+                          : 'bg-black/70 text-white border border-white/20'
+                      }`}>
+                        {status}
+                      </span>
+                    );
+                  })()}
                 </div>
               </div>
 
@@ -91,18 +136,14 @@ export default function FeaturedAuctions() {
                     </div>
                     <span className="font-medium">{auction.date}</span>
                   </div>
-                  <div className="flex items-center text-gray-700 group-hover:text-black transition-colors">
-                    <div className="w-10 h-10 rounded-lg bg-gray-100 group-hover:bg-black group-hover:text-white flex items-center justify-center mr-3 transition-all duration-300">
-                      <MapPin size={18} />
+                  {auction.breed && (
+                    <div className="flex items-center text-gray-700 group-hover:text-black transition-colors">
+                      <div className="w-10 h-10 rounded-lg bg-gray-100 group-hover:bg-black group-hover:text-white flex items-center justify-center mr-3 transition-all duration-300">
+                        <MapPin size={18} />
+                      </div>
+                      <span className="font-medium">{auction.breed}</span>
                     </div>
-                    <span className="font-medium">{auction.location}</span>
-                  </div>
-                  <div className="flex items-center text-gray-700 group-hover:text-black transition-colors">
-                    <div className="w-10 h-10 rounded-lg bg-gray-100 group-hover:bg-black group-hover:text-white flex items-center justify-center mr-3 transition-all duration-300">
-                      <Users size={18} />
-                    </div>
-                    <span className="font-medium">{auction.participants}</span>
-                  </div>
+                  )}
                 </div>
 
                 <button className="w-full bg-black text-white py-4 rounded-xl hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-2 font-bold group-hover:shadow-lg hover:scale-[1.02]">

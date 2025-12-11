@@ -1,4 +1,4 @@
-import { Phone, Mail, MessageCircle } from 'lucide-react';
+import { Phone, MessageCircle } from 'lucide-react';
 
 const concentrados = [
   {
@@ -297,18 +297,18 @@ export default function Assessors() {
         <div className="text-center mb-20">
           <div className="inline-block mb-4">
             <span className="px-4 py-2 bg-black/5 rounded-full text-sm font-semibold text-gray-700">
-              Conheça nossa equipe
+              CONHEÇA NOSSA EQUIPE
             </span>
           </div>
           <h2 className="text-5xl md:text-6xl font-extrabold text-black mb-6">
-            Nossos <span 
+            NOSSOS <span 
               className="bg-clip-text text-transparent"
               style={{
                 backgroundImage: 'linear-gradient(to right, #000000, #808080, #000000)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
               }}
-            >Assessores</span>
+            >ASSESSORES</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Profissionais especializados prontos para atender você com excelência.
@@ -344,16 +344,6 @@ export default function Assessors() {
                         <Phone size={16} className="text-gray-700 group-hover/link:text-white" />
                       </div>
                       <span className="text-sm font-medium">{assessor.phone}</span>
-                    </a>
-
-                    <a
-                      href={`mailto:${assessor.email}`}
-                      className="flex items-center gap-3 text-gray-700 hover:text-black transition-all duration-200 group/link p-2 rounded-lg hover:bg-gray-50"
-                    >
-                      <div className="w-8 h-8 rounded-lg bg-gray-100 group-hover/link:bg-black flex items-center justify-center transition-colors">
-                        <Mail size={16} className="text-gray-700 group-hover/link:text-white" />
-                      </div>
-                      <span className="text-sm break-all font-medium">{assessor.email}</span>
                     </a>
 
                     <a
@@ -399,16 +389,6 @@ export default function Assessors() {
                         <Phone size={16} className="text-gray-700 group-hover/link:text-white" />
                       </div>
                       <span className="text-sm font-medium">{assessor.phone}</span>
-                    </a>
-
-                    <a
-                      href={`mailto:${assessor.email}`}
-                      className="flex items-center gap-3 text-gray-700 hover:text-black transition-all duration-200 group/link p-2 rounded-lg hover:bg-gray-50"
-                    >
-                      <div className="w-8 h-8 rounded-lg bg-gray-100 group-hover/link:bg-black flex items-center justify-center transition-colors">
-                        <Mail size={16} className="text-gray-700 group-hover/link:text-white" />
-                      </div>
-                      <span className="text-sm break-all font-medium">{assessor.email}</span>
                     </a>
 
                     <a
