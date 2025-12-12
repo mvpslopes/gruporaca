@@ -200,16 +200,16 @@ export default function Assessors() {
                   <p className="text-gray-600 text-center mb-6 text-sm font-medium">{assessor.specialty}</p>
 
                   {assessor.phone && (
-                    <div className="space-y-3">
-                      <a
+                  <div className="space-y-3">
+                    <a
                         href={`tel:${assessor.phone.replace(/\D/g, '')}`}
-                        className="flex items-center gap-3 text-gray-700 hover:text-black transition-all duration-200 group/link p-2 rounded-lg hover:bg-gray-50"
-                      >
-                        <div className="w-8 h-8 rounded-lg bg-gray-100 group-hover/link:bg-black flex items-center justify-center transition-colors">
-                          <Phone size={16} className="text-gray-700 group-hover/link:text-white" />
-                        </div>
-                        <span className="text-sm font-medium">{assessor.phone}</span>
-                      </a>
+                      className="flex items-center gap-3 text-gray-700 hover:text-black transition-all duration-200 group/link p-2 rounded-lg hover:bg-gray-50"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-gray-100 group-hover/link:bg-black flex items-center justify-center transition-colors">
+                        <Phone size={16} className="text-gray-700 group-hover/link:text-white" />
+                      </div>
+                      <span className="text-sm font-medium">{assessor.phone}</span>
+                    </a>
 
                       {assessor.whatsapp && (
                         <a
@@ -256,26 +256,26 @@ export default function Assessors() {
                     <div className="space-y-3">
                       <a
                         href={`tel:${assessor.phone.replace(/\D/g, '')}`}
-                        className="flex items-center gap-3 text-gray-700 hover:text-black transition-all duration-200 group/link p-2 rounded-lg hover:bg-gray-50"
-                      >
-                        <div className="w-8 h-8 rounded-lg bg-gray-100 group-hover/link:bg-black flex items-center justify-center transition-colors">
+                      className="flex items-center gap-3 text-gray-700 hover:text-black transition-all duration-200 group/link p-2 rounded-lg hover:bg-gray-50"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-gray-100 group-hover/link:bg-black flex items-center justify-center transition-colors">
                           <Phone size={16} className="text-gray-700 group-hover/link:text-white" />
-                        </div>
+                      </div>
                         <span className="text-sm font-medium">{assessor.phone}</span>
-                      </a>
+                    </a>
 
                       {assessor.whatsapp && (
-                        <a
-                          href={`https://wa.me/${assessor.whatsapp}?text=${encodeURIComponent(`Olá, ${assessor.name}! Gostaria de mais informações sobre os leilões.`)}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-3 bg-black text-white px-4 py-3 rounded-xl hover:bg-gray-800 transition-all duration-300 justify-center mt-4 font-semibold group-hover:shadow-lg hover:scale-[1.02]"
-                        >
-                          <MessageCircle size={18} />
-                          <span className="text-sm">WhatsApp</span>
-                        </a>
+                    <a
+                      href={`https://wa.me/${assessor.whatsapp}?text=${encodeURIComponent(`Olá, ${assessor.name}! Gostaria de mais informações sobre os leilões.`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 bg-black text-white px-4 py-3 rounded-xl hover:bg-gray-800 transition-all duration-300 justify-center mt-4 font-semibold group-hover:shadow-lg hover:scale-[1.02]"
+                    >
+                      <MessageCircle size={18} />
+                      <span className="text-sm">WhatsApp</span>
+                    </a>
                       )}
-                    </div>
+                  </div>
                   )}
                   {!assessor.phone && (
                     <p className="text-gray-400 text-center text-sm">Contato em breve</p>
@@ -306,29 +306,29 @@ export default function Assessors() {
                   <p className="text-gray-600 text-center mb-6 text-sm font-medium">{assessor.specialty}</p>
 
                   {assessor.phone && (
-                    <div className="space-y-3">
-                      <a
+                  <div className="space-y-3">
+                    <a
                         href={`tel:${assessor.phone.replace(/\D/g, '')}`}
-                        className="flex items-center gap-3 text-gray-700 hover:text-black transition-all duration-200 group/link p-2 rounded-lg hover:bg-gray-50"
-                      >
-                        <div className="w-8 h-8 rounded-lg bg-gray-100 group-hover/link:bg-black flex items-center justify-center transition-colors">
-                          <Phone size={16} className="text-gray-700 group-hover/link:text-white" />
-                        </div>
-                        <span className="text-sm font-medium">{assessor.phone}</span>
-                      </a>
+                      className="flex items-center gap-3 text-gray-700 hover:text-black transition-all duration-200 group/link p-2 rounded-lg hover:bg-gray-50"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-gray-100 group-hover/link:bg-black flex items-center justify-center transition-colors">
+                        <Phone size={16} className="text-gray-700 group-hover/link:text-white" />
+                      </div>
+                      <span className="text-sm font-medium">{assessor.phone}</span>
+                    </a>
 
                       {assessor.whatsapp && (
-                        <a
-                          href={`https://wa.me/${assessor.whatsapp}?text=${encodeURIComponent(`Olá, ${assessor.name}! Gostaria de mais informações sobre os leilões.`)}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-3 bg-black text-white px-4 py-3 rounded-xl hover:bg-gray-800 transition-all duration-300 justify-center mt-4 font-semibold group-hover:shadow-lg hover:scale-[1.02]"
-                        >
-                          <MessageCircle size={18} />
-                          <span className="text-sm">WhatsApp</span>
-                        </a>
+                    <a
+                      href={`https://wa.me/${assessor.whatsapp}?text=${encodeURIComponent(`Olá, ${assessor.name}! Gostaria de mais informações sobre os leilões.`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 bg-black text-white px-4 py-3 rounded-xl hover:bg-gray-800 transition-all duration-300 justify-center mt-4 font-semibold group-hover:shadow-lg hover:scale-[1.02]"
+                    >
+                      <MessageCircle size={18} />
+                      <span className="text-sm">WhatsApp</span>
+                    </a>
                       )}
-                    </div>
+                  </div>
                   )}
                   {!assessor.phone && (
                     <p className="text-gray-400 text-center text-sm">Contato em breve</p>

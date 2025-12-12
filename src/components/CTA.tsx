@@ -14,19 +14,18 @@ export default function CTA() {
               Prepare seu lance!
             </h2>
             
-            <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            <div className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
               {/* Versão Mobile */}
-              <span className="md:hidden block">
-                <span>Conectamos você</span>
-                <span>às melhores</span>
-                <span>oportunidades</span>
-                <span>do mercado equestre.</span>
-              </span>
+              <div className="md:hidden">
+                <div>Conectamos você às melhores</div>
+                <div>oportunidades do mercado equestre.</div>
+              </div>
               {/* Versão Desktop */}
-              <span className="hidden md:block">
-                Conectamos você às melhores oportunidades do mercado equestre.
-              </span>
-            </p>
+              <div className="hidden md:block">
+                <div>Conectamos você às melhores</div>
+                <div>oportunidades do mercado equestre.</div>
+              </div>
+            </div>
             
             <div className="flex flex-wrap gap-4 justify-center pt-4">
               <a

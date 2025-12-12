@@ -190,8 +190,8 @@ function App() {
       <Hero />
       <FeaturedAuctions />
       <CTA />
-      <AssessoriaCriadores />
       <Assessors />
+      <AssessoriaCriadores />
       <SocialLinks />
       <Footer />
       <WhatsAppButton />

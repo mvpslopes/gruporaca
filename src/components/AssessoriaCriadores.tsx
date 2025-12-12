@@ -141,12 +141,12 @@ export default function AssessoriaCriadores() {
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border-2 border-black">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-black rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+          <div className="bg-black rounded-3xl p-6 sm:p-8 md:p-10 text-white">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 sm:mb-6">
               <Zap size={24} className="sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
             </div>
-            <h3 className="text-2xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 text-black">EXECUÇÃO</h3>
-            <p className="text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg">
+            <h3 className="text-2xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 text-white">EXECUÇÃO</h3>
+            <p className="text-gray-300 leading-relaxed text-sm sm:text-base md:text-lg">
               Oferecemos um atendimento humanizado, ágil e prático, para solucionar as necessidades dos clientes e do criatório conforme a demanda.
             </p>
           </div>

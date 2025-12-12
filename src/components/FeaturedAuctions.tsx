@@ -120,7 +120,7 @@ export default function FeaturedAuctions() {
                           ? 'bg-gray-500/90 text-white border border-gray-400/50'
                           : 'bg-black/70 text-white border border-white/20'
                       }`}>
-                        {status}
+                        {status === 'Encerrado' ? 'ENCERRADO' : status}
                       </span>
                     );
                   })()}
@@ -128,20 +128,20 @@ export default function FeaturedAuctions() {
               </div>
 
               <div className="p-6 space-y-4">
-                <h3 className="text-2xl font-bold text-black mb-2">{auction.title}</h3>
+                <h3 className="text-2xl font-bold text-black mb-2 uppercase">{auction.title}</h3>
                 <div className="space-y-3">
                   <div className="flex items-center text-gray-700 group-hover:text-black transition-colors">
                     <div className="w-10 h-10 rounded-lg bg-gray-100 group-hover:bg-black group-hover:text-white flex items-center justify-center mr-3 transition-all duration-300">
                       <Calendar size={18} />
                     </div>
-                    <span className="font-medium">{auction.date}</span>
+                    <span className="font-medium uppercase">{auction.date}</span>
                   </div>
                   {auction.breed && (
                     <div className="flex items-center text-gray-700 group-hover:text-black transition-colors">
                       <div className="w-10 h-10 rounded-lg bg-gray-100 group-hover:bg-black group-hover:text-white flex items-center justify-center mr-3 transition-all duration-300">
                         <MapPin size={18} />
                       </div>
-                      <span className="font-medium">{auction.breed}</span>
+                      <span className="font-medium uppercase">{auction.breed}</span>
                     </div>
                   )}
                 </div>
