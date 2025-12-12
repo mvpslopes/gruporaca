@@ -72,15 +72,15 @@ function getAuctionStatus(startDate: Date, endDate: Date): string {
 
 export default function FeaturedAuctions() {
   return (
-    <section id="leiloes" className="py-24 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
+    <section id="leiloes" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white to-gray-50">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 overflow-x-hidden">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
           <div className="inline-block mb-4">
-            <span className="px-4 py-2 bg-black/5 rounded-full text-sm font-semibold text-gray-700">
+            <span className="px-3 sm:px-4 py-2 bg-black/5 rounded-full text-xs sm:text-sm font-semibold text-gray-700">
               CONFIRA NOSSA AGENDA
             </span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-extrabold text-black mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-black mb-3 sm:mb-4 md:mb-6 px-2 leading-tight">
             LEILÕES EM <span 
               className="bg-clip-text text-transparent"
               style={{
@@ -90,12 +90,12 @@ export default function FeaturedAuctions() {
               }}
             >DESTAQUE</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2">
             Acompanhe aqui os principais leilões de cavalos de elite do Brasil.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {auctions.map((auction, index) => (
             <div
               key={auction.id}

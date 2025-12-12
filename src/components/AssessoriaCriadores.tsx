@@ -55,19 +55,19 @@ export default function AssessoriaCriadores() {
   ];
 
   return (
-    <section id="assessoria-criadores" className="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <section id="assessoria-criadores" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
       {/* Elementos decorativos de fundo */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-black/5 rounded-full blur-3xl opacity-50"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-black/5 rounded-full blur-3xl opacity-50"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10 overflow-x-hidden">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
           <div className="inline-block mb-4">
             <span className="px-4 py-2 bg-black/5 rounded-full text-sm font-semibold text-gray-700">
               SERVIÇOS ESPECIALIZADOS
             </span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-extrabold text-black mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-black mb-4 sm:mb-6 px-2 leading-tight">
             ASSESSORIA <span 
               className="bg-clip-text text-transparent"
               style={{
@@ -77,60 +77,40 @@ export default function AssessoriaCriadores() {
               }}
             >AOS CRIADORES</span>
           </h2>
-          <p className="text-2xl md:text-3xl font-bold text-black mb-4 max-w-4xl mx-auto leading-tight">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-black mb-3 sm:mb-4 max-w-4xl mx-auto leading-snug sm:leading-tight px-2">
             Oferecemos aos criadores um atendimento de <span className="text-black">qualidade</span>,{' '}
             <span className="text-black">personalizado</span> de acordo com as{' '}
             <span className="text-black">demandas de cada cliente</span>!
           </p>
         </div>
 
-        {/* Seção Ariane Andrade */}
-        <div className="mb-20">
-          <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 md:p-12 border-2 border-gray-200 shadow-2xl hover:shadow-3xl transition-all duration-300">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
-              {/* Foto da Ariane */}
-              <div className="flex-shrink-0">
-                <div className="relative group">
-                  <div className="absolute -inset-2 bg-gradient-to-r from-gray-200 to-gray-300 rounded-2xl blur opacity-25 group-hover:opacity-50 transition-opacity"></div>
-                  <img
-                    src="/foto-ariane-fundo.JPG"
-                    alt="Ariane Andrade"
-                    className="relative w-56 h-56 md:w-80 md:h-80 rounded-2xl object-cover shadow-xl border-4 border-white transform group-hover:scale-105 transition-transform duration-300"
-                    onError={(e) => {
-                      // Fallback para minúsculo se maiúsculo não funcionar
-                      const target = e.target as HTMLImageElement;
-                      if (target.src.includes('JPG')) {
-                        target.src = target.src.replace('JPG', 'jpg');
-                      }
-                    }}
-                  />
-                </div>
-              </div>
-              
-              {/* Logo e Informações */}
-              <div className="flex-1 flex flex-col md:flex-row items-center justify-between gap-6">
-                <p className="text-lg md:text-xl text-gray-700 font-medium flex-1 leading-relaxed text-center">
-                  Profissional especializada em assessoria aos criadores, oferecendo soluções personalizadas para o sucesso do seu criatório.
-                </p>
-                <div className="flex-shrink-0">
-                  <div className="relative group">
-                    <div className="absolute -inset-2 bg-gradient-to-r from-gray-200 to-gray-300 rounded-2xl blur opacity-25 group-hover:opacity-50 transition-opacity"></div>
-                    <img
-                      src="/logo-ariane-andrade-fundo.png"
-                      alt="Logo Assessoria Ariane Andrade"
-                      className="relative w-56 h-56 md:w-80 md:h-80 rounded-2xl object-contain shadow-xl border-4 border-white transform group-hover:scale-105 transition-transform duration-300 bg-white"
-                    />
-                  </div>
-                </div>
-              </div>
+        {/* Seção Ariane Andrade - Imagens */}
+        <div className="mb-10 sm:mb-12 md:mb-16 lg:mb-20">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 overflow-hidden">
+            {/* Imagem Mobile - Vertical */}
+            <div className="md:hidden w-full flex justify-center">
+              <img
+                src="/arte-ariane-vertical.png"
+                alt="Ariane Andrade - Assessoria aos Criadores"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+            
+            {/* Imagem Desktop - Horizontal */}
+            <div className="hidden md:block w-full flex justify-center">
+              <img
+                src="/arte-ariane-horizontal.png"
+                alt="Ariane Andrade - Assessoria aos Criadores"
+                className="w-full h-auto object-contain"
+              />
             </div>
           </div>
         </div>
 
         {/* Nossos Serviços */}
-        <div className="mb-20">
-          <h3 className="text-4xl font-extrabold text-black mb-12 text-center">NOSSOS SERVIÇOS</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mb-12 sm:mb-16 md:mb-20">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black mb-8 sm:mb-10 md:mb-12 text-center px-2">NOSSOS SERVIÇOS</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
@@ -150,39 +130,39 @@ export default function AssessoriaCriadores() {
         </div>
 
         {/* Planejamento e Execução */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-black rounded-3xl p-10 text-white">
-            <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6">
-              <Target size={32} className="text-white" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-12 sm:mb-16">
+          <div className="bg-black rounded-3xl p-6 sm:p-8 md:p-10 text-white">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+              <Target size={24} className="sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
             </div>
-            <h3 className="text-3xl font-bold mb-6">PLANEJAMENTO</h3>
-            <p className="text-gray-300 leading-relaxed text-lg">
+            <h3 className="text-2xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6">PLANEJAMENTO</h3>
+            <p className="text-gray-300 leading-relaxed text-sm sm:text-base md:text-lg">
               Analisar e definir os objetivos do criador e criatório, direcionando todas as pendências e demandas para o nosso setor operacional, cumprindo prazos das devidas necessidades estipulados pelas associações.
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl p-10 border-2 border-black">
-            <div className="w-16 h-16 bg-black rounded-xl flex items-center justify-center mb-6">
-              <Zap size={32} className="text-white" />
+          <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border-2 border-black">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-black rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+              <Zap size={24} className="sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
             </div>
-            <h3 className="text-3xl font-bold mb-6 text-black">EXECUÇÃO</h3>
-            <p className="text-gray-700 leading-relaxed text-lg">
+            <h3 className="text-2xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 text-black">EXECUÇÃO</h3>
+            <p className="text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg">
               Oferecemos um atendimento humanizado, ágil e prático, para solucionar as necessidades dos clientes e do criatório conforme a demanda.
             </p>
           </div>
         </div>
 
         {/* Mensagem Final */}
-        <div className="bg-gradient-to-r from-black to-gray-800 rounded-3xl p-12 text-white text-center mb-16">
-          <h3 className="text-4xl md:text-5xl font-extrabold mb-4">
+        <div className="bg-gradient-to-r from-black to-gray-800 rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 text-white text-center mb-12 sm:mb-16">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 px-2">
             Excelência e sucesso na sua criação!
           </h3>
         </div>
 
         {/* CTA */}
-        <div className="text-center">
-          <h3 className="text-3xl font-bold text-black mb-4">Pronto para transformar seu criatório?</h3>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        <div className="text-center px-2">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4">Pronto para transformar seu criatório?</h3>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto">
             Entre em contato e descubra como a Assessoria Ariane Andrade, pode ajudar você a alcançar seus objetivos.
           </p>
           
@@ -190,31 +170,31 @@ export default function AssessoriaCriadores() {
           <div className="space-y-6 mb-8">
             {/* Ligação */}
             <div>
-              <p className="text-lg font-semibold text-black mb-2">Ligação:</p>
+              <p className="text-base sm:text-lg font-semibold text-black mb-2">Ligação:</p>
               <a
                 href="tel:2133289772"
-                className="group bg-black text-white px-8 py-4 rounded-xl font-bold hover:bg-gray-800 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 inline-flex"
+                className="group bg-black text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-xl font-bold hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 inline-flex text-sm sm:text-base"
               >
-                <Phone size={20} />
+                <Phone size={18} className="sm:w-5 sm:h-5" />
                 (21) 3328-9772
               </a>
             </div>
 
             {/* WhatsApp */}
             <div>
-              <p className="text-lg font-semibold text-black mb-4">WhatsApp:</p>
-              <div className="flex flex-wrap justify-center gap-4">
+              <p className="text-base sm:text-lg font-semibold text-black mb-3 sm:mb-4">WhatsApp:</p>
+              <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
                 {/* Ariane Andrade */}
                 <a
                   href="https://wa.me/5521981972847?text=Olá, gostaria de saber mais sobre os serviços de Assessoria ao Criador."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-green-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-green-700 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
+                  className="group bg-green-600 text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-xl font-bold hover:bg-green-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 text-sm sm:text-base w-full sm:w-auto"
                 >
-                  <MessageCircle size={20} />
+                  <MessageCircle size={18} className="sm:w-5 sm:h-5" />
                   <div className="text-left">
-                    <div className="text-sm font-normal">Ariane Andrade:</div>
-                    <div className="text-base">(21) 98197-2847</div>
+                    <div className="text-xs sm:text-sm font-normal">Ariane Andrade:</div>
+                    <div className="text-sm sm:text-base">(21) 98197-2847</div>
                   </div>
                 </a>
                 
@@ -223,12 +203,12 @@ export default function AssessoriaCriadores() {
                   href="https://wa.me/5531990790604?text=Olá, gostaria de saber mais sobre os serviços de Assessoria ao Criador."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-green-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-green-700 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
+                  className="group bg-green-600 text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-xl font-bold hover:bg-green-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 text-sm sm:text-base w-full sm:w-auto"
                 >
-                  <MessageCircle size={20} />
+                  <MessageCircle size={18} className="sm:w-5 sm:h-5" />
                   <div className="text-left">
-                    <div className="text-sm font-normal">Carol Marinho:</div>
-                    <div className="text-base">(31) 99079-0604</div>
+                    <div className="text-xs sm:text-sm font-normal">Carol Marinho:</div>
+                    <div className="text-sm sm:text-base">(31) 99079-0604</div>
                   </div>
                 </a>
               </div>

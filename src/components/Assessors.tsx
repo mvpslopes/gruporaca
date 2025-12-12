@@ -54,7 +54,7 @@ const existingAssessors: Record<string, { phone: string; whatsapp: string; email
   'TICO': { phone: '(31) 99539-1747', whatsapp: '5531995391747', email: 'tico.expresso@gruporaca.com.br' },
   'FELIPE NOGUEIRA': { phone: '(22) 99913-6263', whatsapp: '5522999136263', email: 'felipe.nogueira@gruporaca.com.br' },
   'FELIPE SÁ': { phone: '(22) 99913-6263', whatsapp: '5522999136263', email: 'felipe.sa@gruporaca.com.br' },
-  'VERONENSE': { phone: '(32) 98825-0180', whatsapp: '5532988250180', email: 'veronense@gruporaca.com.br' },
+  'VERONESE': { phone: '(32) 98825-0180', whatsapp: '5532988250180', email: 'veronese@gruporaca.com.br' },
   'DINHO': { phone: '(21) 99322-3340', whatsapp: '5521993223340', email: 'dinho@gruporaca.com.br' },
   'MARTINS': { phone: '(24) 99229-7942', whatsapp: '5524992297942', email: 'martins@gruporaca.com.br' },
   'ZIRDA': { phone: '(35) 8413-4770', whatsapp: '553584134770', email: 'zirda@gruporaca.com.br' },
@@ -115,7 +115,7 @@ const assessoriaGrupoRacaList = [
   'WALLACE',
   'STEVAN',
   'TILÃO',
-  'VERONENSE',
+  'VERONESE',
   'VINÍCIUS RODRIGUES'
 ].sort((a, b) => a.localeCompare(b, 'pt-BR'));
 
@@ -151,19 +151,19 @@ const assessoriasParceiras = [
 
 export default function Assessors() {
   return (
-    <section id="assessores" className="py-24 bg-white relative overflow-hidden">
+    <section id="assessores" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white relative overflow-hidden">
       {/* Elementos decorativos de fundo */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gray-100 rounded-full blur-3xl opacity-50"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gray-100 rounded-full blur-3xl opacity-50"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10 overflow-x-hidden">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
           <div className="inline-block mb-4">
-            <span className="px-4 py-2 bg-black/5 rounded-full text-sm font-semibold text-gray-700">
+            <span className="px-3 sm:px-4 py-2 bg-black/5 rounded-full text-xs sm:text-sm font-semibold text-gray-700">
               CONHEÇA NOSSA EQUIPE
             </span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-extrabold text-black mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-black mb-3 sm:mb-4 md:mb-6 px-2 leading-tight">
             NOSSOS <span 
               className="bg-clip-text text-transparent"
               style={{
@@ -173,25 +173,25 @@ export default function Assessors() {
               }}
             >ASSESSORES</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2">
             Profissionais especializados prontos para atender você com excelência.
           </p>
         </div>
 
-        <div className="space-y-16">
+        <div className="space-y-12 sm:space-y-14 md:space-y-16">
           {/* Assessoria Grupo Raça */}
           <div>
-            <h3 className="text-2xl font-semibold text-center mb-8">Assessoria Grupo Raça</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <h3 className="text-xl sm:text-2xl font-semibold text-center mb-6 sm:mb-8 px-2">Assessoria Grupo Raça</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {assessoriaGrupoRaca.map((assessor, index) => (
                 <div
                   key={`gruporaca-${assessor.id}`}
-                  className="group bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-black transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                  className="group bg-white rounded-2xl p-4 sm:p-5 md:p-6 border-2 border-gray-100 hover:border-black transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="mb-6">
-                    <div className="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-gray-300 rounded-xl p-6 text-center group-hover:border-black group-hover:bg-gradient-to-br group-hover:from-gray-200 group-hover:to-gray-300 transition-all duration-300">
-                      <h3 className="text-2xl font-bold text-gray-900">
+                  <div className="mb-4 sm:mb-6">
+                    <div className="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-gray-300 rounded-xl p-4 sm:p-5 md:p-6 text-center group-hover:border-black group-hover:bg-gradient-to-br group-hover:from-gray-200 group-hover:to-gray-300 transition-all duration-300">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 break-words">
                         {assessor.name}
                       </h3>
                     </div>
@@ -234,17 +234,17 @@ export default function Assessors() {
 
           {/* Assessoria Campolina */}
           <div>
-            <h3 className="text-2xl font-semibold text-center mb-8">Assessoria Campolina</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <h3 className="text-xl sm:text-2xl font-semibold text-center mb-6 sm:mb-8 px-2">Assessoria Campolina</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {assessoria.map((assessor, index) => (
                 <div
                   key={`assessoria-${assessor.id}`}
-                  className="group bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-black transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                  className="group bg-white rounded-2xl p-4 sm:p-5 md:p-6 border-2 border-gray-100 hover:border-black transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
                   style={{ animationDelay: `${index * 80}ms` }}
                 >
-                  <div className="mb-6">
-                    <div className="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-gray-300 rounded-xl p-6 text-center group-hover:border-black group-hover:bg-gradient-to-br group-hover:from-gray-200 group-hover:to-gray-300 transition-all duration-300">
-                      <h3 className="text-2xl font-bold text-gray-900">
+                  <div className="mb-4 sm:mb-6">
+                    <div className="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-gray-300 rounded-xl p-4 sm:p-5 md:p-6 text-center group-hover:border-black group-hover:bg-gradient-to-br group-hover:from-gray-200 group-hover:to-gray-300 transition-all duration-300">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 break-words">
                         {assessor.name}
                       </h3>
                     </div>
@@ -287,17 +287,17 @@ export default function Assessors() {
 
           {/* Assessorias Parceiras */}
           <div>
-            <h3 className="text-2xl font-semibold text-center mb-8">Assessorias Parceiras</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <h3 className="text-xl sm:text-2xl font-semibold text-center mb-6 sm:mb-8 px-2">Assessorias Parceiras</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {assessoriasParceiras.map((assessor, index) => (
                 <div
                   key={`parceiras-${assessor.id}`}
-                  className="group bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-black transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                  className="group bg-white rounded-2xl p-4 sm:p-5 md:p-6 border-2 border-gray-100 hover:border-black transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
                   style={{ animationDelay: `${index * 80}ms` }}
                 >
-                  <div className="mb-6">
-                    <div className="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-gray-300 rounded-xl p-6 text-center group-hover:border-black group-hover:bg-gradient-to-br group-hover:from-gray-200 group-hover:to-gray-300 transition-all duration-300">
-                      <h3 className="text-2xl font-bold text-gray-900">
+                  <div className="mb-4 sm:mb-6">
+                    <div className="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-gray-300 rounded-xl p-4 sm:p-5 md:p-6 text-center group-hover:border-black group-hover:bg-gradient-to-br group-hover:from-gray-200 group-hover:to-gray-300 transition-all duration-300">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 break-words">
                         {assessor.name}
                       </h3>
                     </div>

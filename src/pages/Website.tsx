@@ -108,9 +108,9 @@ export default function Website({ onBack }: WebsiteProps) {
     <div className="min-h-screen bg-white">
       {/* Navbar */}
       <nav className="bg-black border-b border-gray-800 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex items-center gap-4">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-14 sm:h-16 md:h-20">
+            <div className="flex items-center gap-2 sm:gap-4">
               <button 
                 onClick={() => {
                   if (onBack) {
@@ -119,30 +119,30 @@ export default function Website({ onBack }: WebsiteProps) {
                     window.location.href = '/';
                   }
                 }}
-                className="flex items-center gap-2 text-white hover:text-gray-300 transition-colors"
+                className="flex items-center gap-1 sm:gap-2 text-white hover:text-gray-300 transition-colors"
               >
-                <ArrowLeft size={20} />
-                <span className="text-sm">Voltar</span>
+                <ArrowLeft size={16} className="sm:w-5 sm:h-5" />
+                <span className="text-xs sm:text-sm hidden sm:inline">Voltar</span>
               </button>
               <img 
                 src="/logo.png" 
                 alt="Grupo Raça" 
-                className="h-12 w-auto"
+                className="h-8 sm:h-10 md:h-12 w-auto"
               />
             </div>
-            <div className="flex items-center gap-2 overflow-x-auto">
+            <div className="flex items-center gap-1 sm:gap-2 overflow-x-auto scrollbar-hide -mr-2 sm:-mr-0">
               {sections.map(section => (
                 <button
                   key={section.id}
                   onClick={() => setActiveSection(section.id)}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 whitespace-nowrap ${
+                  className={`flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-md sm:rounded-lg transition-all duration-200 whitespace-nowrap text-xs sm:text-sm ${
                     activeSection === section.id
                       ? 'bg-white text-black'
                       : 'text-gray-300 hover:text-white hover:bg-gray-800'
                   }`}
                 >
-                  <section.icon size={18} />
-                  <span className="text-sm">{section.label}</span>
+                  <section.icon size={14} className="sm:w-4 sm:h-4 md:w-[18px] md:h-[18px]" />
+                  <span className="hidden xs:inline">{section.label}</span>
                 </button>
               ))}
             </div>
